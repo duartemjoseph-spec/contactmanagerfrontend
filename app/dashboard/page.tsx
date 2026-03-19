@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
-import { isLoggedIn } from "@/lib/auth";
+import { isLoggedIn, logoutUser } from "@/lib/auth";
 import {
   addContact,
   deleteContact,
@@ -18,7 +18,7 @@ const emptyForm: ContactFormData = {
   phoneNumber: "",
 };
 
-export default function Home() {
+export default function DashboardPage() {
   const router = useRouter();
 
   const [contacts, setContacts] = useState<Contact[]>([]);
@@ -49,9 +49,10 @@ export default function Home() {
   useEffect(() => {
     if (!isLoggedIn()) {
       router.push("/login");
-    } else {
-      loadContacts();
+      return;
     }
+
+    loadContacts();
   }, [router]);
 
   function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -149,6 +150,7 @@ export default function Home() {
   }
 
   function handleLogout() {
+    logoutUser();
     router.push("/login");
   }
 
