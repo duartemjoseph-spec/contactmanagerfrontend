@@ -37,5 +37,5 @@ export async function loginUser(user: UserFormData): Promise<string> {
     throw new Error(errorText || "Login failed.");
   }
 
-  return response.json();
+  return response.text();
 }

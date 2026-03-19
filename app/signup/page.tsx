@@ -95,9 +95,14 @@ export default function SignupPage() {
       saveToken(token);
       router.push("/dashboard");
     } catch (error) {
-      console.error(error);
-      setEmailError("Could not create account. Username may already exist.");
-    } finally {
+  console.error(error);
+
+  if (error instanceof Error) {
+    setEmailError(error.message);
+  } else {
+    setEmailError("Could not create account.");
+  }
+} finally {
       setIsCreating(false);
     }
   }
