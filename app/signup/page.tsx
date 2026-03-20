@@ -1,11 +1,11 @@
 "use client";
 
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
 import { isLoggedIn, saveToken } from "@/lib/auth";
 import { createAccount, loginUser } from "@/services/userService";
-import { SquareUser } from "lucide-react";
+import { LockKeyhole, Mail, SquareUser } from "lucide-react";
 
 export default function SignupPage() {
   const router = useRouter();
@@ -22,7 +22,6 @@ export default function SignupPage() {
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [confirmPasswordError, setConfirmPasswordError] = useState("");
-  const [showToast] = useState(true);
   const [isCreating, setIsCreating] = useState(false);
 
   useEffect(() => {
@@ -96,14 +95,14 @@ export default function SignupPage() {
       saveToken(token);
       router.push("/dashboard");
     } catch (error) {
-  console.error(error);
+      console.error(error);
 
-  if (error instanceof Error) {
-    setEmailError(error.message);
-  } else {
-    setEmailError("Could not create account.");
-  }
-} finally {
+      if (error instanceof Error) {
+        setEmailError(error.message);
+      } else {
+        setEmailError("Could not create account.");
+      }
+    } finally {
       setIsCreating(false);
     }
   }
@@ -111,14 +110,15 @@ export default function SignupPage() {
   return (
     <main className="min-h-screen bg-white text-slate-900">
       <header className="border-b border-slate-200">
-       <div className="flex items-center gap-2">
-  <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-500 text-white">
-    <SquareUser className="h-4 w-4" />
-  </div>
-  <span className="text-base font-bold text-indigo-500">
-    ContactManager
-  </span>
-</div>
+        <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4">
+          <div className="flex items-center gap-2">
+            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-500 text-white">
+              <SquareUser className="h-4 w-4" />
+            </div>
+            <span className="text-base font-bold text-indigo-500">
+              ContactManager
+            </span>
+          </div>
 
           <button
             type="button"
@@ -131,12 +131,10 @@ export default function SignupPage() {
 
       <section className="flex min-h-[calc(100vh-65px)] flex-col items-center justify-between px-6 py-10">
         <div className="flex w-full max-w-sm flex-1 flex-col items-center pt-6">
-          {showToast && (
-            <div className="mb-5 flex w-full items-center gap-3 rounded-xl border border-indigo-200 bg-indigo-50 px-4 py-3 text-sm text-slate-700 shadow-sm">
-              <span className="text-slate-500">ⓘ</span>
-              <span>Create your account to access your workspace.</span>
-            </div>
-          )}
+          <div className="mb-5 flex w-full items-center gap-3 rounded-xl border border-indigo-200 bg-indigo-50 px-4 py-3 text-sm text-slate-700 shadow-sm">
+            <span className="text-slate-500">ⓘ</span>
+            <span>Create your account to access your workspace.</span>
+          </div>
 
           <div className="w-full rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
             <h1 className="mb-2 text-center text-3xl font-bold text-slate-900">
@@ -161,7 +159,7 @@ export default function SignupPage() {
                     nameError ? "border-red-400" : "border-slate-300"
                   }`}
                 >
-                  <span className="mr-2 text-slate-400">👤</span>
+                  <SquareUser className="mr-2 h-4 w-4 text-slate-400" />
                   <input
                     id="fullName"
                     type="text"
@@ -195,7 +193,7 @@ export default function SignupPage() {
                     emailError ? "border-red-400" : "border-slate-300"
                   }`}
                 >
-                  <span className="mr-2 text-slate-400">✉️</span>
+                  <Mail className="mr-2 h-4 w-4 text-slate-400" />
                   <input
                     id="email"
                     type="text"
@@ -229,7 +227,7 @@ export default function SignupPage() {
                     passwordError ? "border-red-400" : "border-slate-300"
                   }`}
                 >
-                  <span className="mr-2 text-slate-400">🔒</span>
+                  <LockKeyhole className="mr-2 h-4 w-4 text-slate-400" />
                   <input
                     id="password"
                     type={showPassword ? "text" : "password"}
@@ -270,7 +268,7 @@ export default function SignupPage() {
                     confirmPasswordError ? "border-red-400" : "border-slate-300"
                   }`}
                 >
-                  <span className="mr-2 text-slate-400">🔒</span>
+                  <LockKeyhole className="mr-2 h-4 w-4 text-slate-400" />
                   <input
                     id="confirmPassword"
                     type={showConfirmPassword ? "text" : "password"}
@@ -309,6 +307,7 @@ export default function SignupPage() {
               </label>
 
               <button
+                type="submit"
                 disabled={isCreating}
                 className="flex w-full items-center justify-center gap-2 rounded-xl bg-indigo-500 px-4 py-3 font-semibold text-white transition hover:bg-indigo-600 disabled:opacity-70"
               >

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import react, { useEffect, useState } from "react";
 import { isLoggedIn, saveToken } from "@/lib/auth";
 import { loginUser } from "@/services/userService";
 import { LockKeyhole, Mail } from "lucide-react";
