@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { isLoggedIn, saveToken } from "@/lib/auth";
 import { loginUser } from "@/services/userService";
 import { LockKeyhole, Mail } from "lucide-react";
+import { SquareUser } from "lucide-react";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -64,7 +65,7 @@ export default function LoginPage() {
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4">
           <div className="flex items-center gap-2">
             <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-500 text-sm text-white">
-              📇
+              <SquareUser />
             </div>
             <span className="text-base font-bold text-indigo-500">
               ContactManager
