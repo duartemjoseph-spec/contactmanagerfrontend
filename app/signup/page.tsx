@@ -111,15 +111,14 @@ export default function SignupPage() {
   return (
     <main className="min-h-screen bg-white text-slate-900">
       <header className="border-b border-slate-200">
-        <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4">
-          <div className="flex items-center gap-2">
-            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-500 text-sm text-white">
-              <SquareUser />
-            </div>
-            <span className="text-base font-bold text-indigo-500">
-              ContactManager
-            </span>
-          </div>
+       <div className="flex items-center gap-2">
+  <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-500 text-white">
+    <SquareUser className="h-4 w-4" />
+  </div>
+  <span className="text-base font-bold text-indigo-500">
+    ContactManager
+  </span>
+</div>
 
           <button
             type="button"

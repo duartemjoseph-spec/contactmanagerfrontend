@@ -173,7 +173,7 @@ export default function DashboardPage() {
       <header className="mb-5 flex flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm lg:flex-row lg:items-center lg:justify-between">
         <div className="flex flex-wrap items-center gap-3">
           <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-indigo-500 text-lg text-white">
-            📇
+            <SquareUser className="h-4 w-4" />
           </div>
 
           <span className="text-base font-bold text-indigo-500">ContactFlow</span>
