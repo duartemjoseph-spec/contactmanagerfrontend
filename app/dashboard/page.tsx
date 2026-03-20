@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { isLoggedIn, logoutUser } from "@/lib/auth";
+import { SquareUser } from "lucide-react";
 import {
   addContact,
   deleteContact,
