@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { isLoggedIn, saveToken } from "@/lib/auth";
 import { loginUser } from "@/services/userService";
+import { LockKeyhole, Mail } from "lucide-react";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -49,7 +50,9 @@ export default function LoginPage() {
       router.push("/dashboard");
     } catch (error) {
       console.error(error);
-      setPasswordError("The password you entered is incorrect. Please try again.");
+      setPasswordError(
+        "The password you entered is incorrect. Please try again.",
+      );
     } finally {
       setIsSigningIn(false);
     }
@@ -105,7 +108,7 @@ export default function LoginPage() {
                 </label>
 
                 <div className="flex items-center rounded-xl border border-slate-300 bg-white px-3">
-                  <span className="mr-2 text-slate-400">✉️</span>
+                  <Mail className="mr-2 h-4 w-4 text-slate-400" />
                   <input
                     id="email"
                     type="text"
@@ -130,7 +133,7 @@ export default function LoginPage() {
                     passwordError ? "border-red-400" : "border-slate-300"
                   }`}
                 >
-                  <span className="mr-2 text-slate-400">🔒</span>
+                  <LockKeyhole className="mr-2 h-4 w-4 text-slate-400" />
                   <input
                     id="password"
                     type={showPassword ? "text" : "password"}
