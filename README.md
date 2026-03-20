@@ -17,4 +17,4 @@ Built a full stack Contact Manager project using:
 - Tailwind CSS
 
 ## Person Who Peer Reviewed My Assignment
-- [Add name here]: " review here "
+- [Eli]: " Everything looks amazing it looks close to the figma just one everything works amazing and i like how i can scroll down and see all the info great work "
