@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { isLoggedIn } from "@/lib/auth";
+import { SquareUser } from "lucide-react";
 import {
   addContact,
   deleteContact,
@@ -171,14 +172,16 @@ export default function Home() {
       <header className="mb-5 flex flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm lg:flex-row lg:items-center lg:justify-between">
         <div className="flex flex-wrap items-center gap-3">
           <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-indigo-500 text-lg text-white">
-            📇
+            <SquareUser />
           </div>
-
           <span className="text-base font-bold text-indigo-500">ContactFlow</span>
 
           <h1 className="text-2xl font-bold text-slate-900 md:text-3xl">
             Contact Manager
           </h1>
+
+          <span className="text-base font-bold text-indigo-500">ContactManager</span>
+
         </div>
 
         <div className="flex w-full flex-col gap-3 sm:flex-row lg:w-auto">
