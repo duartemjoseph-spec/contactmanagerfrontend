@@ -1,4 +1,5 @@
-
+## Link to Deployed Application
+- (https://contactmanagerfrontend-rho.vercel.app/login)
 
 # Joseph Duarte
 
@@ -15,5 +16,5 @@ Built a full stack Contact Manager project using:
 - Next.js with TypeScript
 - Tailwind CSS
 
-## Person Who Peer Reviewed My work
-- [Eli]: "everything looks good and works like the Figma design."
+## Person Who Peer Reviewed My Assignment
+- [Eli]: " Everything looks amazing it looks close to the figma just one everything works amazing and i like how i can scroll down and see all the info great work "
