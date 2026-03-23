@@ -1,3 +1,5 @@
+
+
 # Joseph Duarte
 
 ## Date Revised
@@ -13,5 +15,5 @@ Built a full stack Contact Manager project using:
 - Next.js with TypeScript
 - Tailwind CSS
 
-## Person Who Peer Reviewed My Assignment
-- [Add name here]: " review here "
+## Person Who Peer Reviewed My work
+- [Eli]: "everything looks good and works like the Figma design."
